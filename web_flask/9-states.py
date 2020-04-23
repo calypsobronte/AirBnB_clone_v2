@@ -5,14 +5,15 @@ app = Flask(__name__)
 
 
 @app.route('/states', strict_slashes=False)
-@app.route('/states/<list_id>', strict_slashes=False)
-def states_list(list_id=None):
+@app.route('/states/<id>', strict_slashes=False)
+def states_list(id=None):
     states = storage.all(State)
     cities = storage.all(City).values()
-    if list_id is not None:
-        list_id = "State.{}" + list_id
-    return render_template('9-states.html', states=states,
-                           cities=cities, list_id=list_id)
+    if id is not None:
+        id = "State." + id
+    return render_template("9-states.html",
+                           states=states, cities=cities, id=id)
+
 
 
 @app.teardown_appcontext
