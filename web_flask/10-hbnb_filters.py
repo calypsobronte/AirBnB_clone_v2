@@ -8,7 +8,8 @@ app = Flask(__name__)
 def filters_hbnb():
     states = storage.all(State).values()
     amenities = storage.all(Amenity).values()
-    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+    return render_template('10-hbnb_filters.html',
+                           states=states, amenities=amenities)
 
 
 @app.teardown_appcontext

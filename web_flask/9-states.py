@@ -11,7 +11,8 @@ def states_list(list_id=None):
     cities = storage.all(City).values()
     if list_id is not None:
         list_id = "State.{}" + list_id
-    return render_template('9-states.html', states=states, cities=cities, list_id=list_id)
+    return render_template('9-states.html', states=states,
+                           cities=cities, list_id=list_id)
 
 
 @app.teardown_appcontext
