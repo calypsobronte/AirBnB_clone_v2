@@ -15,7 +15,6 @@ def states_list(id=None):
                            states=states, cities=cities, id=id)
 
 
-
 @app.teardown_appcontext
 def close(self):
     storage.close()
