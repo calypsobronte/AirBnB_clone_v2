@@ -28,6 +28,7 @@ def pytho_is_cool(text):
 def int_number(n):
     return '{} is a number'.format(n).replace('_', ' ')
 
+
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     return render_template('5-number.html', n=n)
